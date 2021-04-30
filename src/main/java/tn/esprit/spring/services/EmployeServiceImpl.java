@@ -30,7 +30,7 @@ public class EmployeServiceImpl implements IEmployeService {
 	}
 
 	@Override
-	public Employe addUser(Employe e) {
+	public Employe addEmploye(Employe e) {
 		l.info("In  addUser : " + e); 
 		Employe userSaved = EmployeRepository.save(e);
 		l.info("Out of  addUser. "); 
@@ -52,14 +52,9 @@ public class EmployeServiceImpl implements IEmployeService {
 		// Optional retrun type - Java 8 (susceptible de retourner des valeurs «vides» et pas null)
 		Employe e =  EmployeRepository.findById((int) Long.parseLong(id)).orElse(null);
 		//User u =  userRepository.findById(Long.parseLong(id)).get(); 
-		l.info("user returned : " + e);
+		l.info("employe returned : " + e);
 		return e; 
 	}
 
-	@Override
-	public Employe addEmploye(Employe e) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 }

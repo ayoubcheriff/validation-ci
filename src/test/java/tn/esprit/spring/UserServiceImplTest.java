@@ -28,7 +28,7 @@ public class UserServiceImplTest {
 	public void testAddEmploye() throws ParseException {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date d = dateFormat.parse("2015-03-23");
-		Employe e = new Employe(null, null, null, false, null); 
+		Employe e = new Employe("Ayoub", "Cherif", "ayoub.cherif@esprit.tn", false, Role.ADMINISTRATEUR); 
 		Employe employeAdded = es.addEmploye(e); 
 		assertEquals(e.getPrenom(), employeAdded.getPrenom());
 	}
@@ -37,16 +37,16 @@ public class UserServiceImplTest {
 	public void testModifyEmploye() throws ParseException   {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date d = dateFormat.parse("2015-03-23");
-		Employe e = new Employe(null, null, null, false, null); 
+		Employe e = new Employe("Ayoub2", "Cherif2", "ayoub.cherif@esprit.tn", false, Role.INGENIEUR); 
 		Employe employeUpdated  = es.updateEmploye(e); 
 		assertEquals(e.getPrenom(), employeUpdated.getPrenom());
 	}
 
 	@Test
 	public void testRetrieveAllEmployes() {
-		List<Employe> listUsers = es.retrieveAllEmploye(); 
+		List<Employe> listEmploye = es.retrieveAllEmploye(); 
 		// if there are 5 users in DB : 
-		assertEquals(5, listUsers.size());
+		assertEquals(5, listEmploye.size());
 	}
 
 	@Test
